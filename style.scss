@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+//  $$$ VARIABLES $$$
+//// primary colors
+$red: hsl(0, 100%, 74%);
+$green: hsl(154, 59%, 51%);
+
+//// accent color
+$blue: hsl(248, 32%, 49%);
+
+//// neutral colors
+$dark-blue: hsl(249, 10%, 26%);
+$grayish-blue: hsl(246, 25%, 77%);
+
+//// typography
+$fs: 16px;
+$ff: "Poppins", sans-serif;
+$fw-light: 400;
+$fw-medium: 500;
+$fw-bold: 600;
+$fw-extra-bold: 700;
+// // // // // // // // // // // //
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+html {
+  font-size: 62.5%;
+
+  body {
+    font-family: $ff;
+    box-sizing: border-box;
+    color: $dark-blue;
+    font-size: $fs;
+
+    .container {
+      height: 100vh;
+      background-image: url(images/bg-intro-desktop.png);
+      background-color: $red;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+  }
+}
+
+.card {
+  margin-top: 12rem;
+  width: 75%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .heading {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.8rem;
+
+    &__primary {
+      line-height: 1.2;
+      font-size: 4.6rem;
+    }
+    &__text {
+      font-size: $fs;
+      line-height: 1.6;
+    }
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+
+    &__trial {
+      background-color: $blue;
+      color: #fff;
+      text-align: center;
+      padding: 1.6rem 0;
+      border-radius: 1rem;
+      font-weight: $fw-light;
+      box-shadow: 0 1rem 0 0 rgba(0, 0, 0, 0.1);
+      span {
+        font-weight: $fw-bold;
+      }
+    }
+    &__block {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+      padding: 4rem;
+      border-radius: 1rem;
+      box-shadow: 0 1rem 0 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .input-block {
+      position: relative;
+
+      .error-img {
+        position: absolute;
+        // transform: translateY(-50%);
+        top: 1.5rem;
+        right: 3rem;
+      }
+      .error-message {
+        display: block;
+        font-size: 1.2rem;
+        color: $red;
+        font-weight: $fw-medium;
+        text-align: end;
+        padding-top: 1rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 1.6rem 3.2rem;
+        border-radius: 0.6rem;
+        border: 1px solid #ddd;
+        font-size: 1.4rem;
+        font-weight: $fw-bold;
+
+        &:focus {
+          outline: none;
+          border: 1px solid #666;
+        }
+      }
+    }
+
+    #submit-btn {
+      background-color: $green;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-weight: $fw-light;
+      padding: 1.6rem 0 1.2rem;
+      box-shadow: 0 0.4rem 0 0 rgba(36, 132, 90, 0.7);
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: hsl(154, 58%, 45%);
+      }
+      &:focus,
+      &:active {
+        box-shadow: 0 0.2rem 0 0 rgba(36, 132, 90, 1);
+        background-color: $green;
+        transform: translateY(5px);
+      }
+    }
+    .terms {
+      color: $grayish-blue;
+      font-size: 1.1rem;
+      text-align: center;
+
+      .link {
+        color: $red;
+        text-decoration: none;
+        font-weight: $fw-bold;
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-bottom: 1rem;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+// Media Query
+@media (max-width: 375px) {
+  .container {
+    background-image: url(images/bg-intro-mobile.png);
+    footer {
+      display: none;
+    }
+  }
+  .card {
+    margin-top: 9rem;
+    width: 87%;
+    max-width: 370px0px;
+    grid-template-columns: 1fr;
+    gap: 6rem;
+
+    .heading {
+      text-align: center;
+      gap: 2.4rem;
+
+      &__primary {
+        font-size: 2.8rem;
+        font-weight: $fw-bold;
+      }
+      &__text {
+        font-size: 1.55rem;
+        padding: 0 0.5rem;
+        line-height: 1.7;
+      }
+    }
+
+    .form {
+      &__trial {
+        padding: 2.1rem 4.2rem;
+        font-weight: $fw-light;
+      }
+      &__block {
+        gap: 1.6rem;
+        padding: 2.4rem;
+        border-radius: 1rem;
+        box-shadow: 0 1rem 0 0 rgba(0, 0, 0, 0.2);
+
+        .input-block {
+          input {
+            padding: 1.5rem 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// helper calasses
+
+.hidden {
+  display: none !important;
+}
+
+.outline-red {
+  color: $red;
+  border: 2px solid $red !important;
+}
