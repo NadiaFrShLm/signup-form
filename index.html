@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
@@ -15,16 +16,13 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
     <title>Frontend Mentor | Intro component with sign up form</title>
-
-    <style></style>
   </head>
 
   <body>
     <div class="container">
       <div class="card">
-        <header class="heading">
+        <header class="heading" role="header">
           <h1 class="heading__primary">Learn to code by watching others</h1>
           <p class="heading__text">
             See how experienced developers solve problems in real-time. Watching
@@ -32,58 +30,65 @@
             is invaluable.
           </p>
         </header>
-        <div class="form">
+        <main class="form" role="main">
           <p class="form__trial">
             <span>Try it free 7 days</span> then $20/mo. thereafter
           </p>
           <form class="form__block">
             <!-- first name -->
-            <label class="input-block">
+            <div class="input-block">
               <input
-                onfocus="this.placeholder=''"
                 id="firstName"
                 type="text"
                 placeholder="First Name"
                 autocomplete="off"
               />
               <div class="error-block hidden">
-                <img class="error-img" src="images/icon-error.svg" />
+                <img
+                  class="error-img"
+                  src="images/icon-error.svg"
+                  alt="error_icon"
+                />
                 <em class="error-message">First Name cannot be empty</em>
               </div>
-            </label>
+            </div>
             <!-- last name -->
-            <label class="input-block">
+            <div class="input-block">
               <input
-                onfocus="this.placeholder=''"
                 id="lastName"
                 type="text"
                 placeholder="Last Name"
                 autocomplete="off"
               />
               <div class="error-block hidden">
-                <img class="error-img" src="images/icon-error.svg" />
+                <img
+                  class="error-img"
+                  src="images/icon-error.svg"
+                  alt="error_icon"
+                />
                 <em class="error-message">Last Name cannot be empty</em>
               </div>
-            </label>
+            </div>
             <!-- email -->
-            <label class="input-block">
+            <div class="input-block">
               <input
-                onfocus="this.placeholder=''"
                 id="email"
                 type="email"
                 placeholder="Email Address"
-                novalidate
                 autocomplete="off"
               />
               <div class="error-block hidden">
-                <img class="error-img" src="images/icon-error.svg" />
+                <img
+                  class="error-img"
+                  src="images/icon-error.svg"
+                  alt="error_icon"
+                />
                 <em class="error-message">Looks like this is not an email</em>
               </div>
-            </label>
+            </div>
             <!-- password -->
-            <label class="input-block">
+            <div class="input-block">
               <input
-                onfocus="this.placeholder=''"
                 type="password"
                 name=""
                 id="password"
@@ -91,10 +96,14 @@
                 autocomplete="off"
               />
               <div class="error-block hidden">
-                <img class="error-img" src="images/icon-error.svg" />
+                <img
+                  class="error-img"
+                  src="images/icon-error.svg"
+                  alt="error_icon"
+                />
                 <em class="error-message">Password cannot be empty</em>
               </div>
-            </label>
+            </div>
             <input
               type="submit"
               value="Claim your free trial"
@@ -105,7 +114,7 @@
               <a href="#" class="link">Terms and Services</a>
             </p>
           </form>
-        </div>
+        </main>
       </div>
 
       <footer>
